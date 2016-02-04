@@ -15,7 +15,7 @@ Without a file, it will start a zsh session with no initial configurations.
 % cat my_zshrc.zsh
 echo 'Hello, World!'
 PROMPT='>>> '
-% zsh -c "$( curl -L https://git.io/zvanilla )" -s /usr/local/bin/zsh -t . my_zshrc.zsh
+% zsh -c "$( curl -L https://git.io/zvanilla ) -s /usr/local/bin/zsh -t . my_zshrc.zsh"
 Hello, World!
 >>> exit
 %
