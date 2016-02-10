@@ -27,7 +27,7 @@ shift $(( $OPTIND - 1 ))
 # Use $SHELL or /bin/zsh
 : ${shell:=${SHELL:-/bin/zsh}}
 
-ZVANILLA_DIR="$( mktemp -d "$dir/zvanilla_XXXX" )"
+ZVANILLA_DIR=${"$( mktemp -d "$dir/zvanilla_XXXX" )":A}
 zshrc="$1"
 
 if [[ -n $zshrc ]]; then
