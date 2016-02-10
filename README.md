@@ -19,7 +19,8 @@ the file.
 % cat my_zshrc.zsh
 echo 'Hello, World!'
 PROMPT='>>> '
-% zsh -c "$( curl -L https://git.io/zvanilla )" -s "-s /usr/local/bin/zsh -t . my_zshrc.zsh"
+# First -s is an option for zsh to pass in arguments
+% zsh -c "$( curl -L https://git.io/zvanilla )" -s -s /usr/local/bin/zsh -t . my_zshrc.zsh
 Hello, World!
 >>> exit
 %
