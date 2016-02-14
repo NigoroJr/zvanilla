@@ -11,9 +11,18 @@ zsh zvanilla.zsh [-h] [-s <shell command>] [-t <tmpdir>] [zshrc]
 Without a file, it will start a zsh session with no initial configurations.
 
 ## Example
-In addition to saving the script and running it, you can use
-[curl](https://curl.haxx.se/) to directly execute the script without saving
-the file.
+```
+% cat my_zshrc.zsh
+echo 'Hello, World!'
+PROMPT='>>> '
+% ./zvanilla.zsh my_zshrc.zsh
+Hello, World!
+>>> exit
+%
+```
+
+Or, you can use [curl](https://curl.haxx.se/) to download and directly execute
+the script without saving it.
 
 ```
 % cat my_zshrc.zsh
