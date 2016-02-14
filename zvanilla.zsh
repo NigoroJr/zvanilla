@@ -35,4 +35,4 @@ if [[ -n $zshrc ]]; then
 fi
 ZDOTDIR=$ZVANILLA_DIR $shell
 
-rm -r $ZVANILLA_DIR
+rm -rf $ZVANILLA_DIR
