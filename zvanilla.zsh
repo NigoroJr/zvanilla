@@ -2,9 +2,9 @@
 
 typeset -gx ZVANILLA_DIR
 
-local dir
-local shell
-local zshrc
+local dir="${TMPDIR:-.}"
+local shell=${SHELL:-/bin/zsh}
+local zshrc=${1:-$HOME/.zshrc}
 
 while getopts 'hs:t:' flag; do
     case "$flag" in
@@ -22,13 +22,7 @@ while getopts 'hs:t:' flag; do
 done
 shift $(( $OPTIND - 1 ))
 
-# Use TMPDIR or current directory
-: ${dir:=${TMPDIR:-.}}
-# Use $SHELL or /bin/zsh
-: ${shell:=${SHELL:-/bin/zsh}}
-
 ZVANILLA_DIR=${"$( mktemp -d "$dir/zvanilla_XXXX" )":A}
-zshrc="$1"
 
 if [[ -n $zshrc ]]; then
     cp $zshrc $ZVANILLA_DIR/.zshrc
