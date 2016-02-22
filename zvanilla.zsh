@@ -3,11 +3,15 @@
 typeset -gx ZVANILLA_DIR
 
 local dir="${TMPDIR:-.}"
+local keep=false
 local shell=${SHELL:-/bin/zsh}
 local zshrc=${1:-$HOME/.zshrc}
 
 while getopts 'hs:t:' flag; do
     case "$flag" in
+        k)
+            keep=true
+            ;;
         s)
             shell=$OPTARG
             ;;
@@ -15,7 +19,7 @@ while getopts 'hs:t:' flag; do
             dir=$OPTARG
             ;;
         h)
-            echo "Usage: $0 [-h] [-s <shell command>] [-t <tmpdir>] <zshrc>"
+            echo "Usage: $0 [-h] [-k] [-s <shell command>] [-t <tmpdir>] <zshrc>"
             exit 0
     esac
 
@@ -29,4 +33,6 @@ if [[ -n $zshrc ]]; then
 fi
 ZDOTDIR=$ZVANILLA_DIR $shell
 
-rm -rf $ZVANILLA_DIR
+if ! $keep; then
+    rm -rf $ZVANILLA_DIR
+fi
