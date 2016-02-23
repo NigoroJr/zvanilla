@@ -5,7 +5,7 @@ typeset -gx ZVANILLA_DIR
 local dir="${TMPDIR:-.}"
 local keep=false
 local shell=${SHELL:-/bin/zsh}
-local zshrc=${1:-$HOME/.zshrc}
+local zshrc="$1"
 
 while getopts 'hs:t:' flag; do
     case "$flag" in
