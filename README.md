@@ -5,7 +5,7 @@ Start a zsh session with a different `.zshrc`.
 ## Usage
 
 ```
-zsh zvanilla.zsh [-h] [-s <shell command>] [-t <tmpdir>] [zshrc]
+zsh zvanilla.zsh [-h] [-k] [-s <shell command>] [-t <tmpdir>] <zshrc>"
 ```
 
 Without a file, it will start a zsh session with no initial configurations.
