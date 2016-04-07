@@ -5,8 +5,9 @@ typeset -gx ZVANILLA_DIR
 local dir="${TMPDIR:-.}"
 local keep=false
 local shell=${SHELL:-/bin/zsh}
+local zshrc
 
-while getopts 'hs:t:' flag; do
+while getopts 'hks:t:' flag; do
     case "$flag" in
         k)
             keep=true
@@ -25,8 +26,9 @@ while getopts 'hs:t:' flag; do
 done
 shift $(( $OPTIND - 1 ))
 
+zshrc="$1"
+
 ZVANILLA_DIR=${"$( mktemp -d "$dir/zvanilla_XXXX" )":A}
-local zshrc="$1"
 
 if [[ -n $zshrc ]]; then
     cp $zshrc $ZVANILLA_DIR/.zshrc
