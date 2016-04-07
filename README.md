@@ -13,7 +13,7 @@ Without a file, it will start a zsh session with no initial configurations.
 The environment variable `ZVANILLA_DIR` can be used to reference the temporary
 directory that is used as the `ZDOTDIR`.
 
-## Example
+## Examples
 
 This script was originally written to test out
 [zplug](https://github.com/b4b4r07/zplug) in a vanilla environment.
@@ -34,6 +34,10 @@ zplug check || zplug install
 
 zplug load
 % zvanilla ~/zshrc
+Installing...        zsh-users/zsh-syntax-highlighting
+Installed!           zsh-users/zsh-syntax-highlighting  (1.52s)
+==> Installation finished successfully!
+zplug: total wall-time 1.553036 sec.
 % exit
 %
 ```
